@@ -17,8 +17,19 @@ header {
 /*--------------------------------------- Main Styles -----------------------------------------*/
 main {
     flex-grow: 1;
-    background-color: aqua;
 }
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-item-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {
 
@@ -38,11 +49,17 @@ footer {
 @media screen and (min-width: 1024px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
+    .carousel-item-img {
+        height: 300px;
+    }
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 1440px -------------------------------------------*/
 @media screen and (min-width: 1440px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
+    .carousel-item-img {
+        height: 350px;
+    }
     /*-------------------------- Footer Styles --------------------------*/
 }
