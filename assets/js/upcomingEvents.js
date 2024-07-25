@@ -1,4 +1,4 @@
-//Logica de index.html
+//Logica de pastEvents.html
 
 const data = {
     currentDate: "2023-01-01",
@@ -188,13 +188,16 @@ const data = {
     ],
 };
 
-console.log(data.events.length);
+
 
 let contenedor = document.getElementById("contenedor");
 for (let i = 0; i < data.events.length; i++) {
-    let tarjeta = document.createElement("div"); // Crear una nueva tarjeta
-    tarjeta.className = "tarjeta";
-    tarjeta.innerHTML = `   <div class="card row" >
+    
+    if (data.currentDate <= data.events[i].date) {
+        console.log("tarjeta");
+        let tarjeta = document.createElement("div");
+        tarjeta.className = "tarjeta";
+        tarjeta.innerHTML = `   <div class="card row" >
                                 <img src="${data.events[i].image}" class="card-img-top p-2" alt="${data.events[i].name}"/>
                                 <div class="card-body justify-content-center align-items-center">
                                     <h5 class="card-title">${data.events[i].name}</h5>
@@ -211,5 +214,6 @@ for (let i = 0; i < data.events.length; i++) {
                                 </div>
                             </div>`;
 
-    contenedor.appendChild(tarjeta);
+        contenedor.appendChild(tarjeta);
+    }
 }
