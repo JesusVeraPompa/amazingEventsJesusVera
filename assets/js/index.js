@@ -188,8 +188,6 @@ const data = {
     ],
 };
 
-
-
 let contenedor = document.getElementById("contenedor");
 for (let i = 0; i < data.events.length; i++) {
     let tarjeta = document.createElement("div");
@@ -212,4 +210,28 @@ for (let i = 0; i < data.events.length; i++) {
                             </div>`;
 
     contenedor.appendChild(tarjeta);
+}
+
+let filtroCategory = data.events.map((events) => events.category);
+console.log(filtroCategory);
+const resultfiltroCategory = filtroCategory.reduce((acc, item) => {
+    if (!acc.includes(item)) {
+        acc.push(item);
+    }
+    return acc;
+}, []);
+
+console.log(resultfiltroCategory);
+let category = document.getElementById("category");
+for (let i = 0; i < resultfiltroCategory.length; i++) {
+    console.log(resultfiltroCategory[i]);
+    let check = document.createElement("div");
+    check.className = "check";
+    check.innerHTML = ` <div class="form-check-inline py-2">
+                        <input class="form-check-input" type="checkbox" id="${resultfiltroCategory[i]}" value="${resultfiltroCategory[i]}" />
+                        <label class="form-check-label" for="flexCheckDefault1"> ${resultfiltroCategory[i]} </label>
+                        </div>
+                        `;
+
+    category.appendChild(check);
 }

@@ -94,6 +94,11 @@ table {
     margin: 20px;
     
 }
+#category{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 
 /*---------------------------------------------------------------------------------------------*/
