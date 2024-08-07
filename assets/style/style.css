@@ -83,11 +83,12 @@ table {
     object-fit: cover;
 }
 #contenedor {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
 }
 .tarjeta {
-    width: 350px;
+    width: 340px;
     -webkit-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
@@ -109,9 +110,9 @@ table {
 @media screen and (min-width: 425px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
-    .tarjeta {
+    /*.tarjeta {
         margin: 40px;
-    }
+    }*/
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 768px -------------------------------------------*/
@@ -127,9 +128,9 @@ table {
     .card-text {
         height: 100px;
     }
-    .tarjeta {
+    /*.tarjeta {
         margin: 17px;
-    }
+    }*/
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 1024px -------------------------------------------*/
@@ -148,9 +149,9 @@ table {
     .card-text {
         height: 80px;
     }
-    .tarjeta {
+    /*.tarjeta {
         margin: 80px;
-    }
+    }*/
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 1440px -------------------------------------------*/
@@ -169,8 +170,8 @@ table {
     .card-text {
         height: 65px;
     }
-    .tarjeta {
+    /*.tarjeta {
         margin: 60px;
-    }
+    }*/
     /*-------------------------- Footer Styles --------------------------*/
 }
