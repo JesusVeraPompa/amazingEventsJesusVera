@@ -208,7 +208,7 @@ function CargarTarjetas() {
                                             <h5 class="precio px-2">$ ${data.events[i].price}</h5>
                                         </div>
                                         <div class="col-6">
-                                            <a href="./pages/details.html" class="btn btn-primary">Details</a>
+                                            <a id="boton${data.events[i]._id}" href="#" class="btn btn-primary" onClick="valorDelID('${data.events[i]._id}')">Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -220,6 +220,14 @@ function CargarTarjetas() {
 }
 
 CargarTarjetas();
+
+
+function valorDelID(valorId) {
+    //console.log(valorId);
+    let ancor = document.getElementById("boton"+valorId);
+    //console.log(ancor);
+    ancor.href = "../pages/details.html?id="+valorId;
+}
 
 // Limpiar tarjetas
 function LimpiarTarjetas() {
@@ -288,7 +296,7 @@ document.getElementById("category").addEventListener("change", (e) => {
                                             <h5 class="precio px-2">$ ${nuevoArreglo[i].price}</h5>
                                         </div>
                                         <div class="col-6">
-                                            <a href="./pages/details.html" class="btn btn-primary">Details</a>
+                                            <a id="boton${nuevoArreglo[i]._id}" href="#" class="btn btn-primary" onClick="valorDelID('${nuevoArreglo[i]._id}')">Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -330,7 +338,7 @@ document.getElementById("category").addEventListener("change", (e) => {
                                             <h5 class="precio px-2">$ ${arregloFiltroLetra[i].price}</h5>
                                             </div>
                                             <div class="col-6">
-                                            <a href="./pages/details.html" class="btn btn-primary">Details</a>
+                                            <a id="boton${arregloFiltroLetra[i]._id}" href="#" class="btn btn-primary" onClick="valorDelID('${arregloFiltroLetra[i]._id}')">Details</a>
                                             </div>
             
                                             </div>
@@ -379,7 +387,7 @@ document.getElementById("search").addEventListener("input", (e) => {
                                 <h5 class="precio px-2">$ ${arregloFiltroLetra[i].price}</h5>
                                 </div>
                                 <div class="col-6">
-                                <a href="./pages/details.html" class="btn btn-primary">Details</a>
+                                            <a id="boton${arregloFiltroLetra[i]._id}" href="#" class="btn btn-primary" onClick="valorDelID('${arregloFiltroLetra[i]._id}')">Details</a>
                                 </div>
 
                                 </div>
