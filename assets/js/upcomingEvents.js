@@ -221,12 +221,11 @@ function CargarTarjetas() {
 
 CargarTarjetas();
 
-
 function valorDelID(valorId) {
     //console.log(valorId);
-    let ancor = document.getElementById("boton"+valorId);
+    let ancor = document.getElementById("boton" + valorId);
     //console.log(ancor);
-    ancor.href = "../pages/details.html?id="+valorId;
+    ancor.href = "../pages/details.html?id=" + valorId;
 }
 
 // Limpiar tarjetas
@@ -373,9 +372,9 @@ document.getElementById("search").addEventListener("input", (e) => {
         // Cargar tarjetas filtradas
         for (let i = 0; i < arregloFiltroLetra.length; i++) {
             if (data.currentDate <= data.events[i].date) {
-            let tarjeta = document.createElement("div");
-            tarjeta.className = "tarjeta";
-            tarjeta.innerHTML = `   
+                let tarjeta = document.createElement("div");
+                tarjeta.className = "tarjeta";
+                tarjeta.innerHTML = `   
                                 <div class="card row" >
                                 <img src="${arregloFiltroLetra[i].image}" class="card-img-top p-2" alt="${arregloFiltroLetra[i].name}"/>
                                 <div class="card-body justify-content-center align-items-center">
@@ -393,7 +392,8 @@ document.getElementById("search").addEventListener("input", (e) => {
                                 </div>
                                 </div>
                             </div>`;
-            contenedor.appendChild(tarjeta);
-        }}
+                contenedor.appendChild(tarjeta);
+            }
+        }
     }
 });

@@ -221,12 +221,11 @@ function CargarTarjetas() {
 
 CargarTarjetas();
 
-
 function valorDelID(valorId) {
     //console.log(valorId);
-    let ancor = document.getElementById("boton"+valorId);
+    let ancor = document.getElementById("boton" + valorId);
     //console.log(ancor);
-    ancor.href = "../pages/details.html?id="+valorId;
+    ancor.href = "../pages/details.html?id=" + valorId;
 }
 
 // Limpiar tarjetas
