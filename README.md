@@ -1,4 +1,4 @@
-# AmazingEvents - Jesus Vera Pompa
+# AmazingEvents - Jesús Vera Pompa
 
 Esta es una solución para [Mind Hub](https://mindhubweb.com/). Los desafíos de Mind Hub te ayudan a mejorar tus habilidades de codificación mediante la creación de proyectos realistas.
 
@@ -13,22 +13,22 @@ Esta es una solución para [Mind Hub](https://mindhubweb.com/). Los desafíos de
 - [Lo que aprendí](#lo-que-aprendí)
 - [Desarrollo continuo](#desarrollo-continuo)
 - [Recursos útiles](#recursos-útiles)
-- [Autor](#autor)
+- [Sobre el Autor](#Sobre-el-Autor)
 - [Agradecimientos](#agradecimientos)
 
 ## Descripción general
 
 ### El desafío
 
-Los usuarios deberían poder:
+Se realizo lo siguiente:
 
-- Sprint 1 - AmazingEvents - Jesus Vera Pompa
+- Sprint 1 - Creación del Desarrollo HTML, Css y JavaScript
 
-- Sprint 2 - Actualizado los JavaScript - AmazingEvents - Jesus Vera Pompa
+- Sprint 2 - Actualizado los JavaScript
 
-- Sprint 3 - Actualizado los JavaScript con eventos y filtros - AmazingEvents - Jesus Vera Pompa
+- Sprint 3 - Actualizado los JavaScript con eventos y filtros
 
-- Sprint 4 - Actualizado los JavaScript con API, Funciones y Tabla Dinamica - Jesus Vera Pompa
+- Sprint 4 - Actualizado los JavaScript con API, Funciones y Tabla Dinámica
 
 ### Captura de pantalla
 
@@ -37,8 +37,8 @@ Los usuarios deberían poder:
 
 ### Enlaces
 
-- URL de la solución: [Agregar la URL de la solución aquí](https://github.com/JesusVeraPompa/amazingEventsJesusVera)
-- URL del sitio en vivo: [Agregar la URL del sitio en vivo aquí](https://jesusverapompa.github.io/amazingEventsJesusVera/)
+- URL de la solución: [https://github.com/JesusVeraPompa/amazingEventsJesusVera](https://github.com/JesusVeraPompa/amazingEventsJesusVera)
+- URL del sitio en vivo: [https://jesusverapompa.github.io/amazingEventsJesusVera/](https://jesusverapompa.github.io/amazingEventsJesusVera/)
 
 ## Mi proceso
 
@@ -63,13 +63,15 @@ Los usuarios deberían poder:
 ### Lo que aprendí
 
 - Introducirse al pensamiento lógico-computacional.
-- Aprender los fundamentos comunes a todos los lenguajes de programación ( variables y tipos de datos, condicionales, bucles y funciones ). 
+- Aprender los fundamentos comunes a todos los lenguajes de programación ( variables y tipos de datos, condicionales, bucles y funciones ).
 - Continuar utilizando las tecnologías del módulo anterior agregándoles “dinamismo” a través de JavaScript.
 - Desarrollar una aplicación frontend completa de forma individual.
 - Desarrollar una aplicación frontend completa de forma grupal “autogestionada” y presentarla al “cliente”!
 - Manejarse de forma colaborativa en GitHub.
 
 ### Desarrollo continuo
+
+Muy interesante todo el tema de CSS y JavaScript, toca mucho mirar la documentación y probar cosas nuevas.
 
 ### Recursos útiles
 
@@ -81,11 +83,13 @@ Los usuarios deberían poder:
 - Git
 - JavaScript
 
-## Autor
+## Sobre el Autor
 
-- Sitio web - [Agrega tu nombre aquí](https://techpompahelp.com/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/JesusVeraPompa)
-- Linkedin - [@yourusername](https://www.linkedin.com/in/jes%C3%BAs-alberto-vera-pompa-26ba43190/)
+- Sitio web - [https://techpompahelp.com/](https://techpompahelp.com/)
+- Frontend Mentor - [https://www.frontendmentor.io/profile/JesusVeraPompa](https://www.frontendmentor.io/profile/JesusVeraPompa)
+- Linkedin - [https://www.linkedin.com/in/jes%C3%BAs-alberto-vera-pompa-26ba43190/](https://www.linkedin.com/in/jes%C3%BAs-alberto-vera-pompa-26ba43190/)
 
 ## Agradecimientos
 
+Muy Agradecido con los Mentores en este Módulo, también a los compañeros, por toda la orientación y explicación de todos los temas, por la paciencia al explicar.
+Gracias por ayudar en mi Crecimiento Personal y Profesional
