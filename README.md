@@ -92,4 +92,4 @@ Muy interesante todo el tema de CSS y JavaScript, toca mucho mirar la documentac
 ## Agradecimientos
 
 Muy Agradecido con los Mentores en este Módulo, también a los compañeros, por toda la orientación y explicación de todos los temas, por la paciencia al explicar.
-Gracias por ayudar en mi Crecimiento Personal y Profesional
+Gracias por ayudar en mi Crecimiento Personal y Profesional.
