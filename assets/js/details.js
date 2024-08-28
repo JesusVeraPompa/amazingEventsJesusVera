@@ -30,17 +30,16 @@ fetch(api)
                                 </div>
                                 <div class="col-12 col-md-6 bg-white rounded-3 p-5">
                                     <h3>${filtroID.name}</h3>
-                                    <p>Name: ${filtroID.name}</p>
-                                    <p>Date: ${filtroID.date}</p>
-                                    <p>Description: ${filtroID.description}</p>
-                                    <p>Category: ${filtroID.category}</p>
-                                    <p>Place: ${filtroID.place}</p>
-                                    <p>Capacity: ${Intl.NumberFormat(
+                                    <p class="par">Date:</p><p> ${filtroID.date}</p>
+                                    <p class="par">Description:</p><p> ${filtroID.description}</p>
+                                    <p class="par">Category:</p><p> ${filtroID.category}</p>
+                                    <p class="par">Place:</p><p> ${filtroID.place}</p>
+                                    <p class="par">Capacity:</p><p> ${Intl.NumberFormat(
                                         "de-DE"
                                       ).format(filtroID.capacity)}</p>
-                                    <p>Estimate: ${!filtroID.estimate ? " N/A " : Intl.NumberFormat("de-DE").format(filtroID.estimate) }</p>
-                                    <p>Assistance: ${!filtroID.assistance ? " N/A " : Intl.NumberFormat("de-DE").format(filtroID.assistance) }</p>
-                                    <p>Price: <strong>$${filtroID.price}</strong></p>
+                                    <p class="par">Estimate:</p><p> ${!filtroID.estimate ? " N/A " : Intl.NumberFormat("de-DE").format(filtroID.estimate) }</p>
+                                    <p class="par">Assistance:</p><p> ${!filtroID.assistance ? " N/A " : Intl.NumberFormat("de-DE").format(filtroID.assistance) }</p>
+                                    <p class="par">Price:</p><p class="price">$${filtroID.price}</p>
                                 </div>
                             </div>    
         

@@ -109,7 +109,15 @@ table {
     -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
 }
-
+.par{
+    float: left;
+    font-weight: 500;
+    margin-right: 5px;
+}
+.price{
+    font-weight: bold;
+    font-size: large;
+}
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 
 /*---------------------------------------------------------------------------------------------*/
