@@ -1,10 +1,10 @@
 # AmazingEvents - Jesus Vera Pompa
 
-Esta es una solución al [AmazingEvents]. Los desafíos de Mind Hub te ayudan a mejorar tus habilidades de codificación mediante la creación de proyectos realistas.
+Esta es una solución para [Mind Hub](https://mindhubweb.com/). Los desafíos de Mind Hub te ayudan a mejorar tus habilidades de codificación mediante la creación de proyectos realistas.
 
 ## Índice
 
-- [Descripción general](#descripción general)
+- [Descripción general](#descripción-general)
 - [El desafío](#el-desafío)
 - [Captura de pantalla](#captura-de-pantalla)
 - [Enlaces](#enlaces)
