@@ -3,7 +3,9 @@
 /*------------------------------------------------------------------------------------------------------------*/
 
 //  Importamos la vista del DOM
-import { CargarTarjetasPastEvents, viewDomIndexPastEvents, viewDomDetailsVacio } from './module/viewDom.js'
+import { CargarTarjetasPastEvents, viewDomCategorias } from './module/viewDom.js'
+//  Importamos los filtros
+import { filtroCheckbox, filtroInput } from './module/filter.js'
 
 //  Declaracion de Variables
 let contenedor = document.getElementById('contenedor')
@@ -25,145 +27,16 @@ fetch(api)
         LimpiarTarjetas()
         CargarTarjetasPastEvents(contenedor, data)
 
-        //  Categorias cargadar por DOM
-        let filtroCategory = data.events.map((events) => events.category)
-        //console.log(filtroCategory);
-        const resultfiltroCategory = filtroCategory.reduce((acc, item) => {
-            if (!acc.includes(item)) {
-                acc.push(item)
-            }
-            return acc
-        }, [])
-        //.log(resultfiltroCategory);
-        let category = document.getElementById('category')
-        for (let i = 0; i < resultfiltroCategory.length; i++) {
-            //console.log(resultfiltroCategory[i]);
-            let check = document.createElement('div')
-            check.className = 'check'
-            check.innerHTML = ` <div class="form-check-inline py-2">
-                        <input class="form-check-input" type="checkbox" id="${resultfiltroCategory[i]}" value="${resultfiltroCategory[i]}" />
-                        <label class="form-check-label" for="flexCheckDefault1"> ${resultfiltroCategory[i]} </label>
-                        </div>
-                        `
+        //  Creamos un filtro por Fecha
+        const filtroFecha = data.events.filter((e) => data.currentDate >= e.date)
+        console.log(filtroFecha)
 
-            category.appendChild(check)
-        }
+        //  Mostramos las categorias por DOM
+        viewDomCategorias(filtroFecha)
 
-        /*---------------------------------------- Filtro por Categoría ----------------------------------------*/
-        //  escuchamos el cambio del checkbox y lo guardamos en un array
-        document.getElementById('category').addEventListener('change', (e) => {
-            let checkboxChekeados = document.querySelectorAll('input[type=checkbox]:checked')
-            let arreglo = Array.from(checkboxChekeados).map((e) => e.value)
-            console.log(arreglo)
+        //  Filtro por Categoría (checkbox)
+        filtroCheckbox(filtroFecha)
 
-            //  si hay checkbox Activados
-            if (arreglo.length > 0) {
-                // creamos un array en base a los checkbox activamos
-                let nuevoArreglo = data.events.filter((e) =>
-                    arreglo.includes(e.category.toString())
-                )
-                console.log(nuevoArreglo)
-
-                if (nuevoArreglo.length === 0) {
-                    LimpiarTarjetas()
-                    viewDomDetailsVacio(contenedor)
-                } else {
-                    //  Cargamos por DOM los datos checkbox activamos
-                    LimpiarTarjetas()
-                    viewDomIndexPastEvents(contenedor, nuevoArreglo)
-
-                    //  Escuchamos el input y lo guardamos en un array
-                    document.getElementById('search').addEventListener('input', (e) => {
-                        let input = e.target.value.toLowerCase()
-                        const arregloFiltroLetra = nuevoArreglo.filter((e) =>
-                            e.name.toLowerCase().includes(input)
-                        )
-                        console.log(arregloFiltroLetra)
-                        if (arregloFiltroLetra.length === 0) {
-                            LimpiarTarjetas()
-                            viewDomDetailsVacio(contenedor)
-                        } else {
-                            //  Cargamos por DOM los datos checkbox activamos segun el filtro del input
-                            LimpiarTarjetas()
-                            viewDomIndexPastEvents(contenedor, arregloFiltroLetra)
-                        }
-                    })
-                }
-            } else {
-                //  si NO hay checkbox Activados
-
-                //  Cargamos por DOM los datos del Array Final
-                LimpiarTarjetas()
-                viewDomIndexPastEvents(contenedor, data.events)
-
-                //  Escuchamos el input y lo guardamos en un array
-                document.getElementById('search').addEventListener('input', (e) => {
-                    let input = e.target.value.toLowerCase()
-                    const arregloFiltroLetra = data.events.filter((e) =>
-                        e.name.toLowerCase().includes(input)
-                    )
-                    console.log(arregloFiltroLetra)
-
-                    if (arregloFiltroLetra.length === 0) {
-                        LimpiarTarjetas()
-                        viewDomDetailsVacio(contenedor)
-                    } else {
-                        //  Cargamos por DOM los datos del Array Final segun el filtro del input
-                        LimpiarTarjetas()
-                        viewDomIndexPastEvents(contenedor, arregloFiltroLetra)
-                    }
-                })
-            }
-        })
-
-        /*---------------------------------------- Filtro por Buscar ----------------------------------------*/
-        //  Escuchamos el input y lo guardamos en un array
-        document.getElementById('search').addEventListener('input', (e) => {
-            let input = e.target.value.toLowerCase()
-            const arregloFiltroLetra = data.events.filter((e) =>
-                e.name.toLowerCase().includes(input)
-            )
-            console.log(arregloFiltroLetra)
-
-            if (arregloFiltroLetra.length === 0) {
-                LimpiarTarjetas()
-                viewDomDetailsVacio(contenedor)
-            } else {
-                //  Cargamos por DOM los datos que guardamos en un array
-                LimpiarTarjetas()
-                viewDomIndexPastEvents(contenedor, arregloFiltroLetra)
-
-                //  escuchamos el cambio del checkbox y lo guardamos en un array
-                document.getElementById('category').addEventListener('change', (e) => {
-                    let checkboxChekeados = document.querySelectorAll(
-                        'input[type=checkbox]:checked'
-                    )
-                    let arreglo = Array.from(checkboxChekeados).map((e) => e.value)
-                    console.log(arreglo)
-
-                    //  si hay checkbox Activados
-                    if (arreglo.length > 0) {
-                        // creamos un array en base a los checkbox activamos
-                        let nuevoArreglo = arregloFiltroLetra.filter((e) =>
-                            arreglo.includes(e.category)
-                        )
-                        console.log(nuevoArreglo)
-
-                        if (nuevoArreglo.length === 0) {
-                            LimpiarTarjetas()
-                            viewDomDetailsVacio(contenedor)
-                        } else {
-                            //  Cargamos por DOM los datos del filtro del input segun el checkbox activo
-                            LimpiarTarjetas()
-                            viewDomIndexPastEvents(contenedor, nuevoArreglo)
-                        }
-                    } else {
-                        //  si NO hay checkbox Activados
-                        //  Cargamos por DOM los datos del filtro del input segun lo guardamos en un array inical del input
-                        LimpiarTarjetas()
-                        viewDomIndexPastEvents(contenedor, arregloFiltroLetra)
-                    }
-                })
-            }
-        })
+        //  Filtro por Buscar (input)
+        filtroInput(filtroFecha)
     })

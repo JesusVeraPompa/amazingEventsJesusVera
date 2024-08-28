@@ -12,13 +12,10 @@ fetch(api)
     .then((response) => response.json())
     .then((data) => {
         console.log(data)
-        console.log(data.events)
 
         // filtra data.events segun la varieble id y muestramelo en array
         let filtroID = data.events.find((e) => e._id === parseInt(id))
         console.log(filtroID)
-        console.log(filtroID.assistance)
-        console.log(filtroID.estimate)
 
         let contenedor = document.getElementById('contenedorN')
         let tarjeta = document.createElement('div')
@@ -26,7 +23,9 @@ fetch(api)
         tarjeta.innerHTML = `
                             <div class="caja">
                                 <div class="div-img-detail col-12 col-md-6 p-2 rounded-3">
-                                    <img src="${filtroID.image}" class="img-detail p-2 rounded-3" alt="cinema" />
+                                    <img src="${
+                                        filtroID.image
+                                    }" class="img-detail p-2 rounded-3" alt="cinema" />
                                 </div>
                                 <div class="col-12 col-md-6 bg-white rounded-3 p-5">
                                     <h3>${filtroID.name}</h3>
@@ -35,10 +34,18 @@ fetch(api)
                                     <p class="par">Category:</p><p> ${filtroID.category}</p>
                                     <p class="par">Place:</p><p> ${filtroID.place}</p>
                                     <p class="par">Capacity:</p><p> ${Intl.NumberFormat(
-                                        "de-DE"
-                                      ).format(filtroID.capacity)}</p>
-                                    <p class="par">Estimate:</p><p> ${!filtroID.estimate ? " N/A " : Intl.NumberFormat("de-DE").format(filtroID.estimate) }</p>
-                                    <p class="par">Assistance:</p><p> ${!filtroID.assistance ? " N/A " : Intl.NumberFormat("de-DE").format(filtroID.assistance) }</p>
+                                        'de-DE'
+                                    ).format(filtroID.capacity)}</p>
+                                    <p class="par">Estimate:</p><p> ${
+                                        !filtroID.estimate
+                                            ? ' N/A '
+                                            : Intl.NumberFormat('de-DE').format(filtroID.estimate)
+                                    }</p>
+                                    <p class="par">Assistance:</p><p> ${
+                                        !filtroID.assistance
+                                            ? ' N/A '
+                                            : Intl.NumberFormat('de-DE').format(filtroID.assistance)
+                                    }</p>
                                     <p class="par">Price:</p><p class="price">$${filtroID.price}</p>
                                 </div>
                             </div>    
