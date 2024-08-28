@@ -77,7 +77,7 @@ table {
     padding: 10px;
 }
 .img-detail {
-    width: 100%;
+    width: 90%;
     height: 400px;
     object-fit: cover;
     -webkit-box-shadow: 5px 5px 5px 0px #d90368;
@@ -113,11 +113,35 @@ table {
     float: left;
     font-weight: 500;
     margin-right: 5px;
+
+}
+.part{
+    font-style: italic;
+    font-weight: bold;
+    background-color: #d90368;
+    color: white;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: table;
 }
 .price{
     font-weight: bold;
     font-size: large;
 }
+.category-text{
+    float: left;
+    margin-right: 10px;
+    font-style: italic;
+    font-weight: bold;
+    background-color: #d90368;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+
+
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 
 /*---------------------------------------------------------------------------------------------*/
@@ -128,9 +152,6 @@ table {
 @media screen and (min-width: 425px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
-    /*.tarjeta {
-        margin: 40px;
-    }*/
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 768px -------------------------------------------*/
@@ -138,7 +159,7 @@ table {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
     .card-body {
-        height: 250px;
+        height: 295px;
     }
     .card-title {
         height: 50px;
@@ -146,9 +167,6 @@ table {
     .card-text {
         height: 100px;
     }
-    /*.tarjeta {
-        margin: 17px;
-    }*/
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 1024px -------------------------------------------*/
@@ -159,7 +177,7 @@ table {
         height: 300px;
     }
     .card-body {
-        height: 230px;
+        height: 280px;
     }
     .card-title {
         height: 50px;
@@ -167,9 +185,6 @@ table {
     .card-text {
         height: 80px;
     }
-    /*.tarjeta {
-        margin: 80px;
-    }*/
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 1440px -------------------------------------------*/
@@ -180,7 +195,7 @@ table {
         height: 500px;
     }
     .card-body {
-        height: 190px;
+        height: 240px;
     }
     .card-title {
         height: 30px;
@@ -188,8 +203,5 @@ table {
     .card-text {
         height: 65px;
     }
-    /*.tarjeta {
-        margin: 60px;
-    }*/
     /*-------------------------- Footer Styles --------------------------*/
 }

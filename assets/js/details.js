@@ -31,7 +31,7 @@ fetch(api)
                                     <h3>${filtroID.name}</h3>
                                     <p class="par">Date:</p><p> ${filtroID.date}</p>
                                     <p class="par">Description:</p><p> ${filtroID.description}</p>
-                                    <p class="par">Category:</p><p> ${filtroID.category}</p>
+                                    <p class="par">Category:</p><p class="part"> ${filtroID.category}</p>
                                     <p class="par">Place:</p><p> ${filtroID.place}</p>
                                     <p class="par">Capacity:</p><p> ${Intl.NumberFormat(
                                         'de-DE'

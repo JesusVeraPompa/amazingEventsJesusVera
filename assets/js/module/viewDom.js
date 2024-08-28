@@ -10,6 +10,8 @@ export let CargarTarjetas = (idHtmlConteiner, data) => {
                                     <img src="${data.events[i].image}" class="card-img-top p-2" alt="${data.events[i].name}"/>
                                     <div class="card-body justify-content-center align-items-center">
                                         <h5 class="card-title">${data.events[i].name}</h5>
+                                        <p class="category-text">${data.events[i].category}</p>
+                                        <p class="date-text">${data.events[i].date}</p>
                                         <p class="card-text">${data.events[i].description}</p>
                                         <div class="d-flex justify-content-center align-items-center">
                                             <div class="col-6 d-flex justify-content-center align-items-center">
@@ -35,6 +37,8 @@ export let viewDomIndex = (idHtmlConteiner, data) => {
                                     <img src="${data[i].image}" class="card-img-top p-2" alt="${data[i].name}"/>
                                     <div class="card-body justify-content-center align-items-center">
                                         <h5 class="card-title">${data[i].name}</h5>
+                                        <p class="category-text">${data[i].category}</p>
+                                        <p class="date-text">${data[i].date}</p>
                                         <p class="card-text">${data[i].description}</p>
                                         <div class="d-flex justify-content-center align-items-center">
                                             <div class="col-6 d-flex justify-content-center align-items-center">
@@ -71,6 +75,8 @@ export let CargarTarjetasPastEvents = (idHtmlConteiner, data) => {
                             <img src="${data.events[i].image}" class="card-img-top p-2" alt="${data.events[i].name}"/>
                             <div class="card-body justify-content-center align-items-center">
                                 <h5 class="card-title">${data.events[i].name}</h5>
+                                <p class="category-text">${data.events[i].category}</p>
+                                <p class="date-text">${data.events[i].date}</p>
                                 <p class="card-text">${data.events[i].description}</p>
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="col-6 d-flex justify-content-center align-items-center">
@@ -97,6 +103,8 @@ export let viewDomIndexPastEvents = (idHtmlConteiner, data) => {
                                     <img src="${data[i].image}" class="card-img-top p-2" alt="${data[i].name}"/>
                                     <div class="card-body justify-content-center align-items-center">
                                         <h5 class="card-title">${data[i].name}</h5>
+                                        <p class="category-text">${data[i].category}</p>
+                                        <p class="date-text">${data[i].date}</p>
                                         <p class="card-text">${data[i].description}</p>
                                         <div class="d-flex justify-content-center align-items-center">
                                             <div class="col-6 d-flex justify-content-center align-items-center">
@@ -123,6 +131,8 @@ export let CargarTarjetasUpcomingEvents = (idHtmlConteiner, data) => {
                             <img src="${data.events[i].image}" class="card-img-top p-2" alt="${data.events[i].name}"/>
                             <div class="card-body justify-content-center align-items-center">
                                 <h5 class="card-title">${data.events[i].name}</h5>
+                                <p class="category-text">${data.events[i].category}</p>
+                                <p class="date-text">${data.events[i].date}</p>
                                 <p class="card-text">${data.events[i].description}</p>
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="col-6 d-flex justify-content-center align-items-center">
@@ -149,6 +159,8 @@ export let viewDomIndexUpcomingEvents = (idHtmlConteiner, data) => {
                                     <img src="${data[i].image}" class="card-img-top p-2" alt="${data[i].name}"/>
                                     <div class="card-body justify-content-center align-items-center">
                                         <h5 class="card-title">${data[i].name}</h5>
+                                        <p class="category-text">${data[i].category}</p>
+                                        <p class="date-text">${data[i].date}</p>
                                         <p class="card-text">${data[i].description}</p>
                                         <div class="d-flex justify-content-center align-items-center">
                                             <div class="col-6 d-flex justify-content-center align-items-center">
