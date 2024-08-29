@@ -4,7 +4,7 @@
 
 /*-------------------------------------------------------------- Vista de Tarjetas ---------------------------------------------------*/
 
-export let CargarTarjetas = (idHtmlConteiner, data) => {
+export let CargarTarjetas = (idHtmlConteiner, data, href) => {
     for (let i = 0; i < data.length; i++) {
         let tarjeta = document.createElement('div')
         tarjeta.className = 'tarjeta'
@@ -21,7 +21,7 @@ export let CargarTarjetas = (idHtmlConteiner, data) => {
                                                 <h5 class="precio px-2">$ ${data[i].price}</h5>
                                             </div>
                                             <div class="col-6">
-                                                <a id="boton${data[i]._id}" href="./pages/details.html?id=${data[i]._id}" class="btn btn-primary">Details</a>
+                                                <a id="boton${data[i]._id}" href="${href}/details.html?id=${data[i]._id}" class="btn btn-primary">Details</a>
                                             </div>
                                         </div>
                                     </div>

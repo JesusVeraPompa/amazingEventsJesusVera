@@ -18,7 +18,7 @@ fetch(api)
         console.log(data.events)
 
         //  Mostramos las tarjetas por DOM
-        CargarTarjetas(contenedor, data.events)
+        CargarTarjetas(contenedor, data.events,"./pages")
 
         //  Mostramos las categorias por DOM
         viewDomCategorias(data.events)
