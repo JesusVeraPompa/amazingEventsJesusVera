@@ -2,12 +2,15 @@
 /*----------------------------------------- Logica de details.html -------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
 
+//  Importamos los datos de la url API
+import { dataAPI } from './module/dataAPI.js'
+
 let url = new URLSearchParams(window.location.search)
 let id = url.get('id')
 console.log(id)
 
 //  API con la Información
-const api = 'https://mindhub-xj03.onrender.com/api/amazing'
+const api = dataAPI()
 fetch(api)
     .then((response) => response.json())
     .then((data) => {
@@ -31,7 +34,9 @@ fetch(api)
                                     <h3>${filtroID.name}</h3>
                                     <p class="par">Date:</p><p> ${filtroID.date}</p>
                                     <p class="par">Description:</p><p> ${filtroID.description}</p>
-                                    <p class="par">Category:</p><p class="part"> ${filtroID.category}</p>
+                                    <p class="par">Category:</p><p class="part"> ${
+                                        filtroID.category
+                                    }</p>
                                     <p class="par">Place:</p><p> ${filtroID.place}</p>
                                     <p class="par">Capacity:</p><p> ${Intl.NumberFormat(
                                         'de-DE'
@@ -53,4 +58,5 @@ fetch(api)
         `
 
         contenedor.appendChild(tarjeta)
-    })
+    }).catch(error => console.error("Error al obtener los datos en details:",
+        error));

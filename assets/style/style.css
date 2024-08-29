@@ -109,13 +109,12 @@ table {
     -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
 }
-.par{
+.par {
     float: left;
     font-weight: 500;
     margin-right: 5px;
-
 }
-.part{
+.part {
     font-style: italic;
     font-weight: bold;
     background-color: #d90368;
@@ -125,11 +124,11 @@ table {
     padding-right: 5px;
     display: table;
 }
-.price{
+.price {
     font-weight: bold;
     font-size: large;
 }
-.category-text{
+.category-text {
     float: left;
     margin-right: 10px;
     font-style: italic;
@@ -140,7 +139,6 @@ table {
     padding-right: 5px;
     border-radius: 5px;
 }
-
 
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 

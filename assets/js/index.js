@@ -6,9 +6,11 @@
 import { CargarTarjetas, viewDomCategorias } from './module/viewDom.js'
 //  Importamos los filtros
 import { filtroCheckbox, filtroInput } from './module/filter.js'
+//  Importamos los datos de la url API
+import { dataAPI } from './module/dataAPI.js'
 
 //  API con la Información
-const api = 'https://mindhub-xj03.onrender.com/api/amazing'
+const api = dataAPI()
 fetch(api)
     .then((response) => response.json())
     .then((data) => {
@@ -16,7 +18,7 @@ fetch(api)
         console.log(data.events)
 
         //  Mostramos las tarjetas por DOM
-        CargarTarjetas(contenedor, data)
+        CargarTarjetas(contenedor, data.events)
 
         //  Mostramos las categorias por DOM
         viewDomCategorias(data.events)
@@ -26,4 +28,6 @@ fetch(api)
 
         //  Filtro por Buscar (input)
         filtroInput(data.events)
-    })
+        
+    }).catch(error => console.error("Error al obtener los datos en Index:",
+        error));

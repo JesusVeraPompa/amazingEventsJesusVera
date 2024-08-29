@@ -3,9 +3,11 @@
 /*------------------------------------------------------------------------------------------------------------*/
 
 //  Importamos la vista del DOM
-import { CargarTarjetasPastEvents, viewDomCategorias } from './module/viewDom.js'
+import { CargarTarjetas, viewDomCategorias } from './module/viewDom.js'
 //  Importamos los filtros
 import { filtroCheckbox, filtroInput } from './module/filter.js'
+//  Importamos los datos de la url API
+import { dataAPI } from './module/dataAPI.js'
 
 //  Declaracion de Variables
 let contenedor = document.getElementById('contenedor')
@@ -17,19 +19,20 @@ function LimpiarTarjetas() {
 }
 
 //  API con la Información
-const api = 'https://mindhub-xj03.onrender.com/api/amazing'
+const api = dataAPI()
 fetch(api)
     .then((response) => response.json())
     .then((data) => {
         console.log(data)
 
-        //  Tarjetas cargadar por DOM
-        LimpiarTarjetas()
-        CargarTarjetasPastEvents(contenedor, data)
-
         //  Creamos un filtro por Fecha
         const filtroFecha = data.events.filter((e) => data.currentDate >= e.date)
         console.log(filtroFecha)
+
+        //  Tarjetas cargadar por DOM
+        LimpiarTarjetas()
+        CargarTarjetas(contenedor, filtroFecha)
+
 
         //  Mostramos las categorias por DOM
         viewDomCategorias(filtroFecha)
@@ -39,4 +42,6 @@ fetch(api)
 
         //  Filtro por Buscar (input)
         filtroInput(filtroFecha)
-    })
+        
+    }).catch(error => console.error("Error al obtener los datos en pastEvents:",
+        error));
