@@ -68,6 +68,13 @@ table {
     border: 2px solid black;
     padding: 10px;
 }
+td{
+    width: 100px;
+}
+.td-stats-general{
+    background-color: rgb(182, 182, 182) !important;
+    font-weight: bold;
+}
 
 .div-img-detail {
     display: flex;
