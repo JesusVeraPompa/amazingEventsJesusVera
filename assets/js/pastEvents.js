@@ -31,7 +31,7 @@ fetch(api)
 
         //  Tarjetas cargadar por DOM
         LimpiarTarjetas()
-        CargarTarjetas(contenedor, filtroFecha, ".")
+        CargarTarjetas(contenedor, filtroFecha, "/")
 
 
         //  Mostramos las categorias por DOM
