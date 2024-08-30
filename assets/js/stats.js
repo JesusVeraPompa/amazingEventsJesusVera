@@ -32,7 +32,7 @@ fetch(api)
                 let assistance = eventsAssistance[i].assistance
                 let capacity = eventsAssistance[i].capacity
                 let porcentaje = (assistance / capacity) * 100
-                let porcentajeTOTAL = parseInt(porcentaje)
+                let porcentajeTOTAL = parseFloat(porcentaje).toFixed(2)
                 let newData = { ...eventsAssistance[i], porcentaje: porcentajeTOTAL }
                 newEventsAssistance.push(newData)
             }
@@ -105,12 +105,10 @@ fetch(api)
         const filtroFechaPast = data.events.filter((e) => data.currentDate >= e.date)
         console.log(filtroFechaPast)
 
-        Events(UpcomingEvents,filtroFechaUpcoming,"UpcomingEvents")
-        Events(PastEvents,filtroFechaPast,"PastEvents")
+        Events(UpcomingEvents, filtroFechaUpcoming, 'UpcomingEvents')
+        Events(PastEvents, filtroFechaPast, 'PastEvents')
 
-        function Events(idHtmlConteiner,data,info) {
-
-
+        function Events(idHtmlConteiner, data, info) {
             //  Filtramos y buscamos el nombre de las categorias
             let filtroCategory = data.map((events) => events.category)
             const resultfiltroCategory = filtroCategory.reduce((acc, item) => {
@@ -142,26 +140,27 @@ fetch(api)
                 let porcentaje = 0
                 let porcentajeTOTAL = 0
                 for (let i = 0; i < data.length; i++) {
-                    if (data[i].category === filtroCategoryOrder[e] && info === "UpcomingEvents") {
+                    if (data[i].category === filtroCategoryOrder[e] && info === 'UpcomingEvents') {
                         ++contador
-                            let Revenues =
-                            data[i].estimate * data[i].price
-                            sumaRevenues += Revenues
-                            sumaEstimate += data[i].estimate
-                            sumaCapacity += data[i].capacity
-                    }else if (data[i].category === filtroCategoryOrder[e] && info === "PastEvents") {
+                        let Revenues = data[i].estimate * data[i].price
+                        sumaRevenues += Revenues
+                        sumaEstimate += data[i].estimate
+                        sumaCapacity += data[i].capacity
+                    } else if (
+                        data[i].category === filtroCategoryOrder[e] &&
+                        info === 'PastEvents'
+                    ) {
                         ++contador
-                            let Revenues =
-                            data[i].assistance * data[i].price
-                            sumaRevenues += Revenues
-                            sumaEstimate += data[i].assistance
-                            sumaCapacity += data[i].capacity
+                        let Revenues = data[i].assistance * data[i].price
+                        sumaRevenues += Revenues
+                        sumaEstimate += data[i].assistance
+                        sumaCapacity += data[i].capacity
                     }
                 }
 
                 porcentaje = (sumaEstimate / sumaCapacity) * 100
-                porcentajeTOTAL = parseInt(porcentaje)
-                sumaPorcentaje += porcentajeTOTAL
+                porcentajeTOTAL = parseFloat(porcentaje).toFixed(2)
+                sumaPorcentaje = +porcentajeTOTAL
 
                 let category = filtroCategoryOrder[e]
                 let a = { ...array[e], category, contador, sumaRevenues, sumaPorcentaje }
@@ -170,22 +169,23 @@ fetch(api)
 
             console.log(array)
 
-
             for (let i = 0; i < array.length; i++) {
                 let tarjeta = document.createElement('tr')
                 tarjeta.className = 'tarjeta'
                 tarjeta.innerHTML = ` 
-                                <td class="td"><strong>${array[i].category}</strong> with ${array[i].contador} Events</td>
-                                <td class="td"><strong>$</strong> ${Intl.NumberFormat('de-DE').format(
-                                    array[i].sumaRevenues
-                                )}</td>
+                                <td class="td"><strong>${array[i].category}</strong> with ${
+                    array[i].contador
+                } Events</td>
+                                <td class="td"><strong>$</strong> ${Intl.NumberFormat(
+                                    'de-DE'
+                                ).format(array[i].sumaRevenues)}</td>
                                 <td class="td">${array[i].sumaPorcentaje}<strong>%</strong></td>
                                 
                                 
                             
                             `
 
-                            idHtmlConteiner.appendChild(tarjeta)
+                idHtmlConteiner.appendChild(tarjeta)
             }
         }
 
