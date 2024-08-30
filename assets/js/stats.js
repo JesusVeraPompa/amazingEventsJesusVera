@@ -176,10 +176,10 @@ fetch(api)
                 tarjeta.className = 'tarjeta'
                 tarjeta.innerHTML = ` 
                                 <td class="td"><strong>${array[i].category}</strong> with ${array[i].contador} Events</td>
-                                <td class="td">$ ${Intl.NumberFormat('de-DE').format(
+                                <td class="td"><strong>$</strong> ${Intl.NumberFormat('de-DE').format(
                                     array[i].sumaRevenues
                                 )}</td>
-                                <td class="td">${array[i].sumaPorcentaje}%</td>
+                                <td class="td">${array[i].sumaPorcentaje}<strong>%</strong></td>
                                 
                                 
                             
