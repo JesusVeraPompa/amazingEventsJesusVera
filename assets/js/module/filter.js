@@ -15,7 +15,7 @@ function LimpiarTarjetas() {
 }
 
 /*---------------------------------------- Filtro por Categoría (checkbox) ----------------------------------------*/
-export let filtroCheckbox = (filtro) => {
+export let filtroCheckbox = (filtro, href) => {
     //  escuchamos el cambio del checkbox y lo guardamos en un array
     document.getElementById('category').addEventListener('change', (e) => {
         let checkboxChekeados = document.querySelectorAll('input[type=checkbox]:checked')
@@ -35,7 +35,7 @@ export let filtroCheckbox = (filtro) => {
             } else {
                 //  Cargamos por DOM los datos checkbox activamos
                 LimpiarTarjetas()
-                CargarTarjetas(contenedor, nuevoArreglo)
+                CargarTarjetas(contenedor, nuevoArreglo, href)
 
                 //  Escuchamos el input y lo guardamos en un array
                 document.getElementById('search').addEventListener('input', (e) => {
@@ -50,7 +50,7 @@ export let filtroCheckbox = (filtro) => {
                     } else {
                         //  Cargamos por DOM los datos checkbox activamos segun el filtro del input
                         LimpiarTarjetas()
-                        CargarTarjetas(contenedor, arregloFiltroLetra)
+                        CargarTarjetas(contenedor, arregloFiltroLetra, href)
                     }
                 })
             }
@@ -59,7 +59,7 @@ export let filtroCheckbox = (filtro) => {
 
             //  Cargamos por DOM los datos del Array Final
             LimpiarTarjetas()
-            CargarTarjetas(contenedor, filtro)
+            CargarTarjetas(contenedor, filtro, href)
 
             //  Escuchamos el input y lo guardamos en un array
             document.getElementById('search').addEventListener('input', (e) => {
@@ -75,7 +75,7 @@ export let filtroCheckbox = (filtro) => {
                 } else {
                     //  Cargamos por DOM los datos del Array Final segun el filtro del input
                     LimpiarTarjetas()
-                    CargarTarjetas(contenedor, filtarregloFiltroLetraoFecha)
+                    CargarTarjetas(contenedor, filtarregloFiltroLetraoFecha, href)
                 }
             })
         }
@@ -83,7 +83,7 @@ export let filtroCheckbox = (filtro) => {
 }
 
 /*---------------------------------------- Filtro por Buscar (input) ----------------------------------------*/
-export let filtroInput = (filtro) => {
+export let filtroInput = (filtro, href) => {
     //  Escuchamos el input y lo guardamos en un array
     document.getElementById('search').addEventListener('input', (e) => {
         let input = e.target.value.toLowerCase()
@@ -96,7 +96,7 @@ export let filtroInput = (filtro) => {
         } else {
             //  Cargamos por DOM los datos que guardamos en un array
             LimpiarTarjetas()
-            CargarTarjetas(contenedor, arregloFiltroLetra)
+            CargarTarjetas(contenedor, arregloFiltroLetra, href)
 
             //  escuchamos el cambio del checkbox y lo guardamos en un array
             document.getElementById('category').addEventListener('change', (e) => {
@@ -118,13 +118,13 @@ export let filtroInput = (filtro) => {
                     } else {
                         //  Cargamos por DOM los datos del filtro del input segun el checkbox activo
                         LimpiarTarjetas()
-                        CargarTarjetas(contenedor, nuevoArreglo)
+                        CargarTarjetas(contenedor, nuevoArreglo, href)
                     }
                 } else {
                     //  si NO hay checkbox Activados
                     //  Cargamos por DOM los datos del filtro del input segun lo guardamos en un array inical del input
                     LimpiarTarjetas()
-                    CargarTarjetas(contenedor, arregloFiltroLetra)
+                    CargarTarjetas(contenedor, arregloFiltroLetra, href)
                 }
             })
         }

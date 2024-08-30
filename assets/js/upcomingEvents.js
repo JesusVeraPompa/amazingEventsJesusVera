@@ -38,10 +38,10 @@ fetch(api)
         viewDomCategorias(filtroFecha)
 
         //  Filtro por Categoría (checkbox)
-        filtroCheckbox(filtroFecha)
+        filtroCheckbox(filtroFecha, "")
 
         //  Filtro por Buscar (input)
-        filtroInput(filtroFecha)
+        filtroInput(filtroFecha, "")
 
     }).catch(error => console.error("Error al obtener los datos en UpcomingEvents:",
         error));

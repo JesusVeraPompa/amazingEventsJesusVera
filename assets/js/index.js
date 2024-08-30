@@ -24,10 +24,10 @@ fetch(api)
         viewDomCategorias(data.events)
 
         //  Filtro por Categoría (checkbox)
-        filtroCheckbox(data.events)
+        filtroCheckbox(data.events,"./pages/")
 
         //  Filtro por Buscar (input)
-        filtroInput(data.events)
+        filtroInput(data.events,"./pages/")
         
     }).catch(error => console.error("Error al obtener los datos en Index:",
         error));
